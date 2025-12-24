@@ -1,0 +1,224 @@
+/* --- Navbar --- */
+.navbar {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    background-color: var(--primary-base);
+    color: var(--text-primary);
+    z-index: 1000;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
+    /* Set a consistent height for the entire bar */
+    height: 70px; 
+    display: flex;
+    align-items: center;
+}
+
+.navbar-inner {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 1.25rem;
+    width: 100%;
+    display: flex;
+    justify-content: space-between; /* Pushes links to sides, logo to center */
+    align-items: center;
+    position: relative;
+}
+
+/* Logo - Forced to Absolute Center of the Bar */
+.navbar-header {
+    position: absolute;
+    left: 50%;
+    transform: translateX(-50%);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.navbar-logo a {
+    color: var(--text-primary);
+    text-decoration: none;
+    font-size: 1.5rem;
+    font-weight: bold;
+    display: flex;
+    align-items: center;
+    line-height: 1; /* Prevents text descent from pushing it up */
+}
+
+/* Desktop nav links */
+.navbar-links {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    display: flex;
+    gap: 1rem;
+    align-items: center; /* Vertical center */
+}
+
+.navbar-links-left {
+    justify-content: flex-start;
+}
+
+.navbar-links-right {
+    justify-content: flex-end;
+}
+
+.navbar-links li a {
+    color: var(--luxury-accent);
+    text-decoration: none;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    /* Height is now relative to the text + padding for better alignment */
+    padding: 0.6rem 1.2rem; 
+    border-radius: 4px;
+    background-color: rgba(0, 232, 200, 0.15);
+    line-height: 1;
+    transition: all 0.3s ease;
+    font-size: 0.95rem;
+}
+
+/* Menu toggle (hamburger) - Vertically Centered */
+.menu-toggle {
+    display: none;
+    flex-direction: column;
+    gap: 6px;
+    cursor: pointer;
+    background: none;
+    border: none;
+    padding: 0;
+    align-items: center;
+    justify-content: center;
+}
+
+.menu-toggle span {
+    display: block;
+    width: 24px;
+    height: 3px;
+    background-color: var(--text-primary);
+    border-radius: 2px;
+}
+
+/* Hover States */
+.navbar-links li a:hover {
+    background-color: rgba(0, 232, 200, 0.3);
+    color: var(--innovation-strike);
+    box-shadow: 0 0 12px rgba(0, 232, 200, 0.5);
+}
+
+.navbar-cta-button {
+    background-color: var(--innovation-strike) !important;
+    color: var(--primary-base) !important;
+    font-weight: bold;
+}
+
+/* Mobile Adjustments */
+@media (max-width: 768px) {
+    .navbar {
+        height: 60px; /* Slimmer for mobile */
+    }
+
+    .menu-toggle {
+        display: flex;
+    }
+
+    .navbar-links-left,
+    .navbar-links-right {
+        display: none;
+    }
+
+    /* Move logo back to flex flow if menu toggle is present */
+    .navbar-header {
+        position: static;
+        transform: none;
+        margin: 0 auto;
+    }
+}
+
+/* Mobile dropdown */
+.navbar-dropdown {
+    position: fixed;
+    top: 60px;
+    left: 0;
+    width: 100%;
+    background: transparent;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 0;
+    z-index: 999;
+    visibility: hidden;
+    opacity: 0;
+    pointer-events: none;
+    transform: translateY(-10px);
+    transition: opacity 0.3s ease, transform 0.3s ease, visibility 0.3s ease;
+}
+
+.navbar-dropdown.active {
+    visibility: visible;
+    opacity: 1;
+    pointer-events: auto;
+    transform: translateY(0);
+}
+
+.navbar-dropdown-inner {
+    max-width: 1200px;
+    margin: 0 auto;
+    width: 100%;
+    background: linear-gradient(to bottom, var(--primary-base) 0%, var(--primary-base) 85%, rgba(15, 17, 35, 0) 100%);
+    padding: 1rem 0 3rem;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.navbar-dropdown-items {
+    list-style: none;
+    margin: 0 auto;
+    padding: 0;
+    display: flex;
+    flex-direction: column;
+    gap: 0.75rem;
+    align-items: center;
+    width: 100%;
+    max-width: 300px;
+}
+
+.navbar-dropdown-items li a {
+    display: block;
+    padding: 0.75rem 1.5rem;
+    border-radius: 6px;
+    background-color: var(--secondary-base, rgba(0, 232, 200, 0.1));
+    border: 1px solid rgba(0, 232, 200, 0.2);
+    color: var(--text-primary);
+    text-decoration: none;
+    text-align: center;
+    width: 100%;
+    transition: all 0.3s ease;
+}
+
+.navbar-dropdown-items li a:hover {
+    border-color: rgba(0, 232, 200, 0.4);
+    color: var(--innovation-strike);
+    box-shadow: 0 0 10px rgba(0, 232, 200, 0.3);
+    transform: translateY(-2px);
+}
+
+.navbar-dropdown-items li a.navbar-cta-button {
+    background-color: var(--innovation-strike) !important;
+    color: var(--primary-base) !important;
+    font-weight: bold;
+    box-shadow: 0 0 12px rgba(0, 232, 200, 0.4) !important;
+}
+
+.navbar-dropdown-items li a.navbar-cta-button:hover {
+    background-color: #00B9A0 !important;
+    box-shadow: 0 0 18px rgba(0, 232, 200, 0.6) !important;
+}
+
+/* Desktop - hide dropdown */
+@media (min-width: 769px) {
+    .navbar-dropdown {
+        display: none;
+    }
+}

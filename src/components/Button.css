@@ -1,0 +1,18 @@
+.btn {
+  display: inline-block;
+  padding: 1rem 2rem;
+  font-size: 1rem;
+  text-decoration: none;
+  border-radius: 5px;
+  /* Use variables for primary color and white text */
+  background-color: var(--innovation-strike);
+  color: var(--text-primary);
+  box-shadow: 0 0 15px rgba(0, 232, 200, 0.7);
+  transition: background-color 0.3s;
+  font-weight: bold;
+}
+
+.btn:hover {
+  /* Use a darker shade of the primary color for the hover effect */
+  background-color: var(--innovation-strike);
+}

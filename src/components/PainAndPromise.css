@@ -1,0 +1,60 @@
+.pain-promise-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    /* Reduce top padding since the Hero section already has a large bottom padding */
+    padding: 2rem 2rem 4rem 2rem; /* Reduced top padding, kept bottom padding */
+    background-color: var(--primary-base);
+    padding-top: 4rem;
+    margin-top: -11%;
+    padding-bottom: 4rem; /* Creates space for the overlap */
+    clip-path: polygon(0% 7%, 100% 1.4%, 100% 100%, 0% 100%);
+}
+
+@media (min-width: 768px) {
+    .pain-promise-container {
+        margin-top: -48px;
+        justify-content: center;
+        gap: 4rem;
+    }
+}
+
+.pain, .promise {
+    max-width: 800px;
+    /* REMOVE margin-bottom: 2rem; */
+    margin-bottom: 0; 
+}
+
+/* Add a margin to the promise paragraph to separate it from the next section slightly */
+.promise p {
+    margin-bottom: 2rem;
+}
+
+/* Inside src/components/PainAndPromise.css */
+
+/* Inside src/components/PainAndPromise.css */
+
+/* General h2 styles for both Problem and Promise */
+.pain h2, .promise h2 {
+    font-size: 2.5rem;
+    margin-bottom: 1rem;
+    /* Base color is set by the specific rules below */
+}
+
+/* 1. Styling for the Problem Header (Luxury/Authority) */
+.pain h2 {
+    color: var(--luxury-accent); 
+}
+
+/* 2. Styling for the Promise Header (High-Impact/Solution) */
+.promise h2 {
+    color: var(--innovation-strike); 
+    text-shadow:   0px 0px 15px rgba(0, 232, 200, 0.7);
+}
+
+.pain p, .promise p {
+    font-size: 1.2rem;
+    line-height: 1.6;
+    color: var(--text-secondary);
+}

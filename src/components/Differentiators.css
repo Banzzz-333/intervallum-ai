@@ -1,0 +1,54 @@
+
+.differentiators-container {
+    padding: 0; 
+    text-align: center;
+    background-color: var(--primary-base); 
+    position: relative; 
+    overflow: hidden; 
+    margin-top: -80px; /* Adjust to overlap with previous section */
+   
+}
+
+
+.differentiators-content {
+ padding: 80px 2rem 4rem; 
+    position: relative;
+    z-index: 3;
+}
+
+.differentiators-content h2 {
+    font-size: 2.5rem;
+    margin-bottom: 3rem;
+    color: var(--luxury-accent); /* Rich Bronze for the headline */
+}
+
+/* --- Differentiators Grid Styling --- */
+.differentiators-grid {
+    display: grid;
+    /* Responsive Grid: 3 columns on desktop, stacks gracefully below 300px */
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 2rem;
+    justify-items: center;
+}
+
+.differentiator {
+    background-color: var(--secondary-base); /* Dark Slate for the card background */
+    padding: 2rem;
+    border-radius: 10px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.3);
+    transition: transform 0.3s ease;
+}
+
+.differentiator:hover {
+    transform: translateY(-5px);
+}
+
+.differentiator h3 {
+    color: var(--luxury-accent); /* Luxury Accent for card titles */
+    margin-top: 0;
+    font-size: 1.5rem;
+}
+
+.differentiator p {
+    color: var(--text-secondary); /* Lighter secondary text for body */
+}

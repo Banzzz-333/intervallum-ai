@@ -1,0 +1,92 @@
+/* --- Blog Page Structure --- */
+.blog-page-container {
+    background-color: var(--primary-base);
+    color: var(--text-primary);
+    min-height: 100vh;
+    padding-top: 80px; /* Space for fixed navbar */
+}
+
+.blog-header {
+    text-align: center;
+    padding: 4rem 2rem 3rem;
+    background-color: var(--primary-base);
+}
+
+.blog-header h1 {
+    font-size: 3rem;
+    color: var(--luxury-accent);
+    margin-bottom: 0.5rem;
+}
+
+.blog-header p {
+    font-size: 1.2rem;
+    color: var(--text-secondary);
+    max-width: 800px;
+    margin: 0 auto;
+}
+
+/* --- Blog Card Layout --- */
+.blog-list {
+    max-width: 1000px;
+    margin: 0 auto;
+    padding: 0 2rem 4rem;
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 2rem;
+}
+
+.blog-card {
+background-color: var(--secondary-base); 
+    padding: 1.5rem;
+    border-radius: 8px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3);
+    text-align: left;
+    transition: transform 0.3s;
+    /* --- NEW LINK RESET STYLES --- */
+    text-decoration: none; /* Remove underline */
+    color: var(--text-primary); /* Ensure all text inside is readable white/light */
+    display: block; /* Make the link fill the entire container */
+    cursor: pointer; /* Ensure the hand pointer shows */
+}
+
+.blog-card:hover {
+    transform: translateY(-5px);
+}
+
+.blog-card h3 {
+    font-size: 1.4rem;
+    color: var(--text-primary);
+    margin-top: 0;
+    margin-bottom: 0.5rem;
+}
+
+.blog-date {
+    font-size: 0.9rem;
+    color: var(--text-secondary);
+    margin-bottom: 1rem;
+}
+
+.blog-card a {
+    color: var(--innovation-strike); /* Digital Aqua for the link */
+    text-decoration: none;
+    font-weight: bold;
+    display: inline-block;
+    margin-top: 1rem;
+    transition: color 0.3s;
+}
+
+.blog-card a:hover {
+    color: var(--innovation-strike);
+}
+
+.read-more {
+    color: var(--innovation-strike); /* Digital Aqua for the text link */
+    font-weight: bold;
+    display: block;
+    margin-top: 1rem;
+    transition: color 0.3s;
+}
+
+.blog-card:hover .read-more {
+    color: var(--luxury-accent); /* Change the link color on hover for visual feedback */
+}

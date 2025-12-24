@@ -1,0 +1,104 @@
+/* --- Footer CSS --- */
+.footer-container {
+    padding: 4rem 2rem 2rem;
+    background-color: var(--primary-base);
+    color: var(--text-primary);
+}
+
+.footer-content {
+    /* Stack all major blocks vertically by default (Mobile-First) */
+    display: flex;
+    flex-direction: column;
+    gap: 2rem;
+    max-width: 1200px;
+    margin: 0 auto;
+    padding-bottom: 2rem;
+    border-bottom: 1px solid #444; /* Separator line for copyright */
+    text-align: center;
+}
+
+/* Base style for all sections */
+.footer-section {
+    flex: 1 1 200px; 
+    text-align: center; /* Centered on mobile */
+}
+
+.footer-section h4 {
+    font-size: 1.2rem;
+    margin-bottom: 1rem;
+    color: var(--luxury-accent);
+}
+
+.footer-section ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+
+.footer-section ul li {
+    margin-bottom: 0.3rem;
+}
+
+.footer-section ul li a {
+    color: var(--text-primary);
+    text-decoration: none;
+    transition: color 0.3s;
+}
+
+.footer-section ul li a:hover {
+    color: var(--innovation-strike);
+}
+
+/* --- DESKTOP LAYOUT (Grid Implementation) --- */
+@media (min-width: 769px) {
+    .footer-content {
+        /* Revert to row/grid behavior for desktop */
+        flex-direction: row; 
+        display: block; /* Disable outer flex to allow inner grid */
+    }
+
+    /* Wrapper to hold link columns side-by-side */
+    .footer-links-wrapper {
+        display: grid;
+        /* Define 2 explicit columns for links */
+        grid-template-columns: repeat(2, 1fr); 
+        gap: 4rem; 
+        margin-bottom: 2rem; /* Space before mission/CTA */
+    }
+    
+    .footer-section {
+        text-align: left; /* Align links to the left on desktop */
+    }
+
+    /* Mission and CTA Block: Force it to span the entire width */
+    .footer-mission-cta {
+        grid-column: 1 / 3; /* Span across the two link columns */
+        text-align: center; /* Center the entire bottom block */
+        border-top: 1px solid #444; /* Separator line above the mission statement */
+        padding-top: 2rem;
+        margin-top: 1rem;
+    }
+
+    .footer-blog-cta {
+        /* Center the button within the centered parent block */
+        display: flex; 
+        justify-content: center;
+        margin-top: 1.5rem;
+    
+    }
+}
+
+/* --- Mission Statement and Copyright --- */
+.mission-statement {
+    font-style: italic;
+    color: var(--text-secondary);
+    margin-bottom: 1.5rem;
+    text-align: center;
+}
+
+.copyright {
+    margin-top: 1rem;
+    text-align: center;
+    padding-top: 1rem;
+    color: var(--text-secondary);
+}

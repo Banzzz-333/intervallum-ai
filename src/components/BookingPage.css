@@ -1,0 +1,39 @@
+.booking-page-container {
+    background-color: var(--primary-base);
+    min-height: 100vh;
+}
+
+.booking-content {
+    padding: 100px 2rem 4rem; /* Spacing below navbar */
+    max-width: 900px;
+    margin: 0 auto;
+    text-align: center;
+}
+
+.booking-content h1 {
+    color: var(--innovation-strike);
+    font-size: 2.5rem;
+    margin-bottom: 0.5rem;
+}
+
+.booking-content p {
+    color: var(--text-secondary);
+    margin-bottom: 2rem;
+}
+
+.scheduling-embed-placeholder {
+    background-color: white; /* Google Calendar looks best on a white background */
+    padding: 0; 
+    height: 800px; /* Increased height for Google Calendar's layout */
+    border-radius: 12px;
+    margin-top: 2rem;
+    margin-bottom: 2rem;
+    box-shadow: 0 10px 40px rgba(0, 0, 0, 0.3);
+    overflow: hidden;
+    border: 1px solid rgba(0, 232, 200, 0.2);
+}
+
+.scheduling-embed-placeholder iframe {
+    width: 100%;
+    height: 100%;
+}

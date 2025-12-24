@@ -1,0 +1,110 @@
+/* --- SCARCITY COUNTER ANIMATION --- */
+@keyframes subtle-pulse {
+    0% {
+        box-shadow: 0 0 1px 0 var(--luxury-accent);
+        transform: scale(1);
+        opacity: 0.85;
+    }
+    50% {
+        box-shadow: 0 0 15px 0 rgba(199, 146, 62, 0.6); 
+        transform: scale(1.005);
+        opacity: 1;
+    }
+    100% {
+        box-shadow: 0 0 1px 0 var(--luxury-accent);
+        transform: scale(1);
+        opacity: 0.85;
+    }
+}
+
+/* --- SCARCITY COUNTER CONTAINER (The Pill) --- */
+.scarcity-pill {
+    /* Layout */
+    display: inline-flex;
+    align-items: center;
+    padding: 0.4rem 1.2rem;
+    margin-bottom: 2rem; 
+    font-size: 0.95rem;
+    font-weight: 700;
+    
+    /* Visual Design */
+    background-color: var(--secondary-base); 
+    border: 2px solid var(--luxury-accent); 
+    border-radius: 999px; 
+
+    /* Subtle Animation */
+    animation: subtle-pulse 4s infinite ease-in-out; 
+    
+    /* Enables mobile stacking/wrapping */
+    flex-wrap: wrap; 
+}
+
+/* --- TEXT COLOR CODING --- */
+.scarcity-label {
+    color: var(--luxury-accent);
+    margin-right: 0.5rem;
+    /* Ensure this flows inline on desktop */
+    display: inline;
+}
+
+.scarcity-current-count {
+    color: var(--text-primary);
+}
+
+.scarcity-separator {
+    color: var(--text-primary);
+    font-weight: 400; 
+}
+
+.scarcity-total-count {
+    color: var(--innovation-strike);
+    font-size: 1.2rem; 
+}
+
+.scarcity-status {
+    color: var(--text-primary);
+}
+
+/* Base centering for data line wrapper */
+.scarcity-data-line {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+/* --- MOBILE RESPONSIVENESS FIX (CRITICAL CENTERING) --- */
+@media (max-width: 768px) {
+    .scarcity-pill {
+        padding: 0.4rem 0.6rem; 
+        font-size: 0.85rem; 
+        width: 90%; 
+        justify-content: center; /* Ensures blocks are centered */
+    }
+    
+    /* Force the long introductory label to sit on its own line and center */
+    .scarcity-label {
+        width: 100%; 
+        text-align: center;
+        margin-right: 0;
+        margin-bottom: 0.2rem;
+        display: block;
+        font-size: 0.75rem;
+    }
+
+    /* Target the new wrapper for the numerical data/status line */
+    .scarcity-data-line {
+        width: 100%; 
+        margin-top: 0.1rem;
+        margin-bottom: 0.2rem;
+    }
+
+    /* Ensure the data block and status flow inline within the centered line */
+    .scarcity-data-block, .scarcity-status {
+        display: inline-block; 
+        text-align: center;
+    }
+
+    .scarcity-current-count, .scarcity-total-count {
+        font-size: 1.1rem; 
+    }
+}
