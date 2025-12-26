@@ -2,10 +2,10 @@ import React from 'react';
 import { BrowserRouter, Routes, Route } from 'react-router-dom';
 import ScrollToTop from './components/ScrollToTop';
 import Navbar from './components/Navbar';
-import Hero from './components/hero'; // Correct capitalization convention: Hero
+import Hero from './components/Hero'; // Correct capitalization convention: Hero
 import Testimonials from './components/Testimonials';
 import Footer from './components/Footer';
-import Blog from './components/blog'; // Correct capitalization convention: Blog
+import Blog from './components/Blog'; // Correct capitalization convention: Blog
 import Button from './components/Button';
 import PainAndPromise from './components/PainAndPromise';
 import Differentiators from './components/Differentiators';
