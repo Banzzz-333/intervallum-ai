@@ -17,6 +17,9 @@ import BookingPage from './components/BookingPage';
 import './App.css';
 
 function App() {
+
+console.log("Vercel Force Build 1");
+
   return (
     <BrowserRouter>
       <div className="App">
@@ -65,4 +68,4 @@ function App() {
   );
 }
 
-export default App;
+export default App;   
